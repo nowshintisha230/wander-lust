@@ -1,7 +1,8 @@
-
-
+import { DeleteAlert } from "@/components/DeleteAlert";
+import { EditModal } from "@/components/EditModal";
+import { Button } from "@heroui/react";
 import Image from "next/image";
-
+import { BiEdit } from "react-icons/bi";
 import { FaRegCalendar } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
 
@@ -16,13 +17,16 @@ const DestinationDetailsPage = async ({ params }) => {
 
   return (
     <div className="max-w-7xl mx-auto">
-     
+      <div className="flex  items-center gap-3 justify-end mt-5 mb-3">
+        <EditModal destination={destination} />
+        <DeleteAlert destination={destination}/>
+      </div>
       <Image
-        className="height={300} w-full object-cover"
+        className="w-full h-100 object-cover"
         alt={destinationName}
         src={imageUrl}
-        height={200}
-        width={200}
+        height={500}
+        width={800}
       />
 
       <div className="p-2">
